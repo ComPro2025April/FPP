@@ -1,4 +1,4 @@
-package Lab2.prog2_1;
+package lab2.prog2_1;
 
 public class Prog2_1 {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class Prog2_1 {
 
         for (Customer c : customers) {
             if (c.getBillingAddress().getCity().equals("Chicago")) {
-                System.out.println(c.toString());
+                System.out.println(c);
                 System.out.println("Shipping address:" + c.getShippingAddress().toString());
                 System.out.println("Billing address:" + c.getBillingAddress().toString());
             }

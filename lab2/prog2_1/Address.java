@@ -1,10 +1,10 @@
-package Lab2.prog2_1;
+package lab2.prog2_1;
 
 public class Address {
-    private String street;
-    private String city;
-    private String state;
-    private String zip;
+    private final String street;
+    private final String city;
+    private final String state;
+    private final String zip;
 
     public Address(String str, String cit, String st, String z) {
         street = str;
@@ -26,8 +26,5 @@ public class Address {
     }
     public String getZip() {
         return zip;
-    }
-    public static void main(String[] args){
-
     }
 }

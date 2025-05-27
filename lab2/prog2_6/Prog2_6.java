@@ -1,4 +1,4 @@
-package Lab2.prog2_6;
+package lab2.prog2_6;
 
 import java.util.ArrayList;
 import java.util.Arrays;

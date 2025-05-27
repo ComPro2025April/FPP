@@ -1,4 +1,4 @@
-package Lab2.prog2_3;
+package lab2.prog2_3;
 
 
 public class Prog2_3 {

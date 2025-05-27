@@ -1,4 +1,4 @@
-package Lab2.prog2_1;
+package lab2.prog2_1;
 
 public class Customer {
     String firstName;

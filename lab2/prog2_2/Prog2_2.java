@@ -1,4 +1,4 @@
-package Lab2.prog2_2;
+package lab2.prog2_2;
 
 public class Prog2_2 {
     public static void main(String[] args) {
