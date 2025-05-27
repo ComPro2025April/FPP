@@ -1,6 +1,6 @@
 package lab2.prog2_2;
 
-import static lab2.RandomNumbers.*;
+import static lab2.prog2_2.RandomNumbers.*;
 
 public class Prog2_2 {
     public static void main(String[] args){
