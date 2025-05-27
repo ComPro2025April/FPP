@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class Prog2_8Tests {
+public class Prog2_8Test {
     @Test
     public void testMin1() {
         int[] arr = {2, -21, 3, 45, 0, 12, 18, 6, 3, 1, 0, -22};
