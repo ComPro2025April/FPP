@@ -1,6 +1,7 @@
 package lab2.prog2_8;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -25,6 +26,14 @@ public class Prog2_8Test {
     public void testMin3() {
         int[] arr = {2, -1, 0, 23};
         int expected = -1;
+        int result = Prog2_8.min(arr);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testMin4() {
+        int[] arr = {1, 1, 1};
+        int expected = 1;
         int result = Prog2_8.min(arr);
         assertEquals(expected, result);
     }

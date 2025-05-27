@@ -6,8 +6,6 @@ import java.util.List;
 
 public class Prog2_6 {
     public static String[] removeDups(String[] arr) {
-        String[] newArr = new String[arr.length];
-
         List<String> newList = new ArrayList<>();
 
         for (int i = 0; i < arr.length; i++) {
