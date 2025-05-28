@@ -1,7 +1,9 @@
-package employeeinfo;
+package lab3.prog3_2.employeeinfo;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.util.Objects;
+
+import lab3.prog3_1.AccountType;
 
 public class Employee {
 
@@ -13,6 +15,7 @@ public class Employee {
 	
 	public Employee(String name, int yearOfHire, int monthOfHire, int dayOfHire){
 		this.name = name;
+
 /* update, using LocalDate
 		GregorianCalendar cal = new GregorianCalendar(yearOfHire,monthOfHire-1,dayOfHire);
 		hireDate = cal.getTime();
@@ -22,28 +25,59 @@ public class Employee {
 	
 	public void createNewChecking(double startAmount) {
 		// implement
-		
+		this.checkingAcct = new Account(this, AccountType.CHECKING, startAmount);
 	}
 
 	public void createNewSavings(double startAmount) {
 		// implement
-		
+		this.savingsAcct = new Account(this, AccountType.SAVING, startAmount);
 	}
 
 	public void createNewRetirement(double startAmount) {
 		// implement
-		
+		this.retirementAcct = new Account(this, AccountType.RETIREMENT, startAmount);
 	}
 
 	public String getFormattedAcctInfo() {
-		// implement
-		return null;
+		StringBuilder sb = new StringBuilder();
+		if(savingsAcct != null) {
+			sb.append("Account type: ").append(savingsAcct.getAccountType()).append("\n");
+			sb.append("Current bal:  ").append(savingsAcct.getBalance()).append("\n");
+		}
+		if(checkingAcct != null) {
+			sb.append("Account type: ").append(checkingAcct.getAccountType()).append("\n");
+			sb.append("Current bal:  ").append(checkingAcct.getBalance()).append("\n");
+		}
+		if(retirementAcct != null) {
+			sb.append("Account type: ").append(retirementAcct.getAccountType()).append("\n");
+			sb.append("Current bal:  ").append(retirementAcct.getBalance()).append("\n");
+		}
+
+		return sb.toString();
 	}
+
 	public void deposit(String acctType, double amt){
-		// implement
+		if(Objects.equals(acctType, AccountType.SAVING.toString()))
+			savingsAcct.makeDeposit(amt);
+		if(Objects.equals(acctType, AccountType.CHECKING.toString()))
+			checkingAcct.makeDeposit(amt);
+		if(Objects.equals(acctType, AccountType.RETIREMENT.toString()))
+			retirementAcct.makeDeposit(amt);
 	}
 	public boolean withdraw(String acctType, double amt){
-		// implement
+		if(Objects.equals(acctType, AccountType.SAVING.toString()) && savingsAcct.getBalance() >= amt){
+			savingsAcct.makeWithdrawal(amt);
+			return true;
+		}
+		if(Objects.equals(acctType, AccountType.CHECKING.toString()) && checkingAcct.getBalance() >= amt){
+			checkingAcct.makeWithdrawal(amt);
+			return true;
+		}
+		if(Objects.equals(acctType, AccountType.RETIREMENT.toString()) && retirementAcct.getBalance() >= amt){
+			retirementAcct.makeWithdrawal(amt);
+			return true;
+		}
+		return false;
 	}
 
 }

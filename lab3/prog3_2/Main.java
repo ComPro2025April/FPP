@@ -1,6 +1,6 @@
 package lab3.prog3_2;
 
-import employeeinfo.Employee;
+import lab3.prog3_2.employeeinfo.Employee;
 
 import java.util.Scanner;
 
@@ -36,9 +36,15 @@ public class Main {
 			//do nothing..the application ends here
 		}	
 	}
+
 	String getFormattedAccountInfo(){
 		//loop through employees array and get formatted
 		//account info for each employee, and assemble into a string
-		return null;
+		StringBuilder sb = new StringBuilder();
+		for(int i=0; i<emps.length; i++){
+			sb.append("ACCOUNT INFO FOR "+emps[i].toString()).append("\n\n");
+			sb.append(emps[i].getFormattedAcctInfo()).append("\n");
+		}
+		return sb.toString();
 	}
 }

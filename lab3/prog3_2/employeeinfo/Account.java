@@ -1,4 +1,4 @@
-package lab3.prog3_1;
+package lab3.prog3_2.employeeinfo;
 
 class Account {
 	private final static double DEFAULT_BALANCE = 0.0;
@@ -6,7 +6,7 @@ class Account {
 	private Enum acctType;
 	private Employee employee;
 
-	public Account(Employee emp, Enum acctType, double balance) {
+	Account(Employee emp, Enum acctType, double balance) {
 		employee = emp;
 		this.acctType = acctType;
 		this.balance = balance;
@@ -21,12 +21,10 @@ class Account {
 	}
 
 	public void makeDeposit(double deposit) {
-		// implement
 		this.balance = deposit;
 	}
 
 	public boolean makeWithdrawal(double amount) {
-		// implement
 		if(this.balance >= amount){
 			this.balance -= amount;
 			return true;
