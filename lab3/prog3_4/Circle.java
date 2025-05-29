@@ -7,9 +7,7 @@ public final class Circle {
         this.radius=radius;
     }
 
-
     public double getRadius() {
-        System.out.println("sdf");
         return radius;
     }
 

@@ -22,7 +22,7 @@ class Account {
 
 	public void makeDeposit(double deposit) {
 		// implement
-		this.balance = deposit;
+		this.balance += deposit;
 	}
 
 	public boolean makeWithdrawal(double amount) {

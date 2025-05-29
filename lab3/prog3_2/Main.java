@@ -2,6 +2,7 @@ package lab3.prog3_2;
 
 import lab3.prog3_2.employeeinfo.Employee;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -34,7 +35,7 @@ public class Main {
 		}
 		else {
 			//do nothing..the application ends here
-		}	
+		}
 	}
 
 	String getFormattedAccountInfo(){
@@ -42,7 +43,6 @@ public class Main {
 		//account info for each employee, and assemble into a string
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<emps.length; i++){
-			sb.append("ACCOUNT INFO FOR "+emps[i].toString()).append("\n\n");
 			sb.append(emps[i].getFormattedAcctInfo()).append("\n");
 		}
 		return sb.toString();

@@ -1,9 +1,12 @@
 package lab3.prog3_2.employeeinfo;
 
 import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Objects;
 
 import lab3.prog3_1.AccountType;
+import lab3.prog3_1.Util;
 
 public class Employee {
 
@@ -20,9 +23,10 @@ public class Employee {
 		GregorianCalendar cal = new GregorianCalendar(yearOfHire,monthOfHire-1,dayOfHire);
 		hireDate = cal.getTime();
 */
+		GregorianCalendar cal = new GregorianCalendar(yearOfHire,monthOfHire-1,dayOfHire);
+		hireDate = LocalDate.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
 	}
 
-	
 	public void createNewChecking(double startAmount) {
 		// implement
 		this.checkingAcct = new Account(this, AccountType.CHECKING, startAmount);
@@ -40,6 +44,7 @@ public class Employee {
 
 	public String getFormattedAcctInfo() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("ACCOUNT INFO FOR ").append(name).append(":\n\n");
 		if(savingsAcct != null) {
 			sb.append("Account type: ").append(savingsAcct.getAccountType()).append("\n");
 			sb.append("Current bal:  ").append(savingsAcct.getBalance()).append("\n");
@@ -64,6 +69,7 @@ public class Employee {
 		if(Objects.equals(acctType, AccountType.RETIREMENT.toString()))
 			retirementAcct.makeDeposit(amt);
 	}
+
 	public boolean withdraw(String acctType, double amt){
 		if(Objects.equals(acctType, AccountType.SAVING.toString()) && savingsAcct.getBalance() >= amt){
 			savingsAcct.makeWithdrawal(amt);
@@ -79,5 +85,4 @@ public class Employee {
 		}
 		return false;
 	}
-
 }
