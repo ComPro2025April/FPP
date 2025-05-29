@@ -1,7 +1,7 @@
 package lab3.prog3_4;
 
 public final class Rectangle {
-    private double length, width;
+    private final double length, width;
 
     public Rectangle(double length, double width) {
         this.length = length;
