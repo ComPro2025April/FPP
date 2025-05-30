@@ -1,4 +1,4 @@
-package lab4.prog4_5.case3;
+package lab4.prog4_6.case3;
 
 import java.util.GregorianCalendar;
 
