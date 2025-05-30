@@ -5,8 +5,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
-import lab3.prog3_1.AccountType;
-import lab3.prog3_1.Util;
+import lab3.prog3_1.*;
 
 public class Employee {
 
@@ -61,25 +60,30 @@ public class Employee {
 		return sb.toString();
 	}
 
-	public void deposit(String acctType, double amt){
-		if(Objects.equals(acctType, AccountType.SAVING.toString()))
-			savingsAcct.makeDeposit(amt);
-		if(Objects.equals(acctType, AccountType.CHECKING.toString()))
-			checkingAcct.makeDeposit(amt);
-		if(Objects.equals(acctType, AccountType.RETIREMENT.toString()))
-			retirementAcct.makeDeposit(amt);
+	public void deposit(AccountType acctType, double amt){
+		switch (acctType){
+			case AccountType.SAVING:
+				savingsAcct.makeDeposit(amt);
+				break;
+			case AccountType.CHECKING:
+				checkingAcct.makeDeposit(amt);
+				break;
+			case AccountType.RETIREMENT:
+				retirementAcct.makeDeposit(amt);
+				break;
+		}
 	}
 
-	public boolean withdraw(String acctType, double amt){
-		if(Objects.equals(acctType, AccountType.SAVING.toString()) && savingsAcct.getBalance() >= amt){
+	public boolean withdraw(AccountType acctType, double amt){
+		if(acctType == AccountType.SAVING && savingsAcct.getBalance() >= amt){
 			savingsAcct.makeWithdrawal(amt);
 			return true;
 		}
-		if(Objects.equals(acctType, AccountType.CHECKING.toString()) && checkingAcct.getBalance() >= amt){
+		if(acctType == AccountType.CHECKING && checkingAcct.getBalance() >= amt){
 			checkingAcct.makeWithdrawal(amt);
 			return true;
 		}
-		if(Objects.equals(acctType, AccountType.RETIREMENT.toString()) && retirementAcct.getBalance() >= amt){
+		if(acctType == AccountType.RETIREMENT && retirementAcct.getBalance() >= amt){
 			retirementAcct.makeWithdrawal(amt);
 			return true;
 		}

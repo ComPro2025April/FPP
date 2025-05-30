@@ -34,8 +34,8 @@ class Account {
 		return false;
 	}
 
-	public String getAccountType(){
-		return this.acctType.name();
+	public AccountType getAccountType(){
+		return this.acctType;
 	}
 
 	public double getBalance(){
