@@ -5,8 +5,10 @@ public class Main {
         Employee employee = new Employee("Undrakh Orgil Odonkhuu","Orgil",360000,2010,8,1);
         Account checking = new Account(employee, AccountType.CHECKING,300);
         Account savings = new Account(employee, AccountType.SAVING,300);
+        Account retirement = new Account(employee, AccountType.RETIREMENT,300);
 
         System.out.println(checking.toString());
         System.out.println(savings.toString());
+        System.out.println(retirement.toString());
     }
 }
