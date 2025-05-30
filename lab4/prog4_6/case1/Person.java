@@ -1,5 +1,6 @@
 package lab4.prog4_6.case1;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Person {
@@ -31,10 +32,15 @@ public class Person {
 		result = 31 * result + dateOfBirth.hashCode();
 		return result;
 	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+	public static void main(String[] args) {
+		GregorianCalendar dob = new GregorianCalendar(1996, Calendar.AUGUST, 6);
+
+		Person p1 = new Person("John Quincy Adams", dob);
+		PersonWithJob p2 = new PersonWithJob("John Quincy Adams", dob, 100000);
+
+		System.out.println("person1 equals person? " + p1.equals(p2));
+		System.out.println("person2 equals person1? " + p2.equals(p1));
 	}
 
 }
