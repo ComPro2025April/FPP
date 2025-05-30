@@ -12,10 +12,10 @@ public class Main {
         PersonWithJob pj2 = new PersonWithJob("John Doe", dob, 100000);
         PersonWithJob pj3 = new PersonWithJob("John Doe", dob, 90000);
 
-        System.out.println("p.equals(pj1)? " + p.equals(pj1));   // false
-        System.out.println("pj1.equals(p)? " + pj1.equals(p));   // false
-        System.out.println("pj1.equals(pj2)? " + pj1.equals(pj2)); // true
-        System.out.println("pj1.equals(pj3)? " + pj1.equals(pj3)); // false
+        System.out.println("p.equals(pj1)? " + p.equals(pj1));
+        System.out.println("pj1.equals(p)? " + pj1.equals(p));
+        System.out.println("pj1.equals(pj2)? " + pj1.equals(pj2));
+        System.out.println("pj1.equals(pj3)? " + pj1.equals(pj3));
     }
 }
 
