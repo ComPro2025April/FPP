@@ -1,4 +1,4 @@
-package lab4.prog4_4.closedcurve.good;
+package lab4.prog4_4.good;
 
 public class Rectangle extends ClosedCurve implements Polygon {
     private final double width, length;
