@@ -3,16 +3,16 @@ package lab3.prog3_1;
 class Account {
 	private final static double DEFAULT_BALANCE = 0.0;
 	private double balance;
-	private Enum acctType;
+	private AccountType acctType;
 	private Employee employee;
 
-	public Account(Employee emp, Enum acctType, double balance) {
+	public Account(Employee emp, AccountType acctType, double balance) {
 		employee = emp;
 		this.acctType = acctType;
 		this.balance = balance;
 	}
 
-	Account(Employee emp, Enum acctType) {
+	Account(Employee emp, AccountType acctType) {
 		this(emp, acctType, DEFAULT_BALANCE);
 	}
 
