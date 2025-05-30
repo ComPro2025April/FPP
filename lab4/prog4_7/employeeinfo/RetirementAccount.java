@@ -1,4 +1,4 @@
-package prog4_7_startup.employeeinfo;
+package lab4.prog4_7.employeeinfo;
 
 public class RetirementAccount extends Account {
 	private final double PENALTY_PERCENT = 2.0;

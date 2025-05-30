@@ -1,10 +1,6 @@
-package prog4_7_startup;
+package lab4.prog4_7;
+import lab4.prog4_7.employeeinfo.Employee;
 import java.util.Arrays;
-
-import prog4_7_startup.employeeinfo.Employee;
-
-
-
 
 public class Main {
 
@@ -32,7 +28,5 @@ public class Main {
 		//to sort emps 
 		Arrays.sort(emps);
 		System.out.println(Arrays.toString(emps));
-		
 	}
-
 }

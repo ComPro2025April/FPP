@@ -1,4 +1,4 @@
-package prog4_7_startup.employeeinfo;
+package lab4.prog4_7.employeeinfo;
 
 public class AccountList {
 	private final int INITIAL_LENGTH = 4;

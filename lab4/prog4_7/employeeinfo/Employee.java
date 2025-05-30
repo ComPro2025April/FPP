@@ -1,11 +1,11 @@
-package prog4_7_startup.employeeinfo;
+package lab4.prog4_7.employeeinfo;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 import prog4_7_startup.MyStringList;
 
-public class Employee { //implements Comparable<Employee> {
+public class Employee implements Comparable<Employee> {
 	private AccountList accounts; 
 	private String name;
 	private Date hireDate;
@@ -16,10 +16,13 @@ public class Employee { //implements Comparable<Employee> {
 		hireDate = cal.getTime();
 		accounts =  new AccountList();
 	}
-//	@Override
-//	public int compareTo(Employee e) {
-//		implement
-//	}
+	@Override
+	public int compareTo(Employee e) {
+		double myLargestBalance = this.accounts.getLargest().getBalance();
+		double otherLargestBalance = e.accounts.getLargest().getBalance();
+		return Double.compare(myLargestBalance, otherLargestBalance);
+	}
+
 	/** returns a list of account types in the order in which 
 	 *  accounts are stored in the AccountList
 	 */
