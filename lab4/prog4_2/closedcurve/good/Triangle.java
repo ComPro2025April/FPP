@@ -1,4 +1,4 @@
-package lesson7.lab7_2.closedcurve.good;
+package lab4.prog4_2.closedcurve.good;
 
 import java.util.Arrays;
 
