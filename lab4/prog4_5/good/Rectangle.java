@@ -1,6 +1,7 @@
-package lab4.prog4_4.good;
+package lab4.prog4_5.good;
 
-public class Rectangle extends ClosedCurve implements Polygon {
+
+public class Rectangle implements Polygon {
     private final double width, length;
     private static final int SIDES = 4;
 
@@ -10,17 +11,7 @@ public class Rectangle extends ClosedCurve implements Polygon {
     }
 
     @Override
-    double computeArea() {
-        return width * length;
-    }
-
-    @Override
-    public int getNumberOfSides() {
-        return SIDES;
-    }
-
-    @Override
-    public double computePerimeter() {
-        return 2 * (width + length);
+    public double[] getArrayOfSides() {
+        return new double[0];
     }
 }

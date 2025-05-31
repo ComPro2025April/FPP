@@ -1,8 +1,8 @@
-package lab4.prog4_4.good;
+package lab4.prog4_5.good;
 
 import java.util.Arrays;
 
-public final class Triangle extends ClosedCurve implements Polygon {
+public final class Triangle implements Polygon {
     /**
      * base and height variables are defined so that height <= base
      */
@@ -83,12 +83,7 @@ public final class Triangle extends ClosedCurve implements Polygon {
     }
 
     @Override
-    public int getNumberOfSides() {
-        return SIDES;
-    }
-
-    @Override
-    public double computePerimeter() {
-        return side1 + side2 + side3;
+    public double[] getArrayOfSides() {
+        return new double[0];
     }
 }
