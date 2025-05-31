@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 public class PersonWithJob {
 	private Person person;
 	private double salary;
+	private static final double EPSILON = 0.00001;
 
 	PersonWithJob(String name, GregorianCalendar dob, double salary) {
 		this.person = new Person(name, dob);
@@ -27,7 +28,7 @@ public class PersonWithJob {
 	public boolean equals(Object obj) {
 		if (obj == null || getClass() != obj.getClass()) return false;
 		PersonWithJob other = (PersonWithJob) obj;
-		return person.equals(other.person) && salary == other.salary;
+		return person.equals(other.person) && Math.abs(this.salary - other.salary) < EPSILON;
 	}
 
 	@Override
