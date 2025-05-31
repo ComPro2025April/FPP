@@ -17,6 +17,6 @@ public interface Polygon {
 
     //returns the perimeter of the polygon
     default double computePerimeter() {
-        return 1;
+        return sum(getArrayOfSides());
     }
 }

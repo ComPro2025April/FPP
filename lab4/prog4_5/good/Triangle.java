@@ -84,6 +84,6 @@ public final class Triangle implements Polygon {
 
     @Override
     public double[] getArrayOfSides() {
-        return new double[0];
+        return new double[]{side1, side2, side3};
     }
 }

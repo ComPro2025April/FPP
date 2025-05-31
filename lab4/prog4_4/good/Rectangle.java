@@ -1,17 +1,12 @@
 package lab4.prog4_4.good;
 
-public class Rectangle extends ClosedCurve implements Polygon {
+public class Rectangle implements Polygon {
     private final double width, length;
     private static final int SIDES = 4;
 
     public Rectangle(double width, double length) {
         this.width = width;
         this.length = length;
-    }
-
-    @Override
-    double computeArea() {
-        return width * length;
     }
 
     @Override

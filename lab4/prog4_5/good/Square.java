@@ -11,6 +11,6 @@ public final class Square implements Polygon {
 
     @Override
     public double[] getArrayOfSides() {
-        return new double[0];
+        return new double[]{side, side, side, side};
     }
 }

@@ -2,7 +2,7 @@ package lab4.prog4_4.good;
 
 import java.util.Arrays;
 
-public final class Triangle extends ClosedCurve implements Polygon {
+public final class Triangle implements Polygon {
     /**
      * base and height variables are defined so that height <= base
      */
@@ -76,10 +76,6 @@ public final class Triangle extends ClosedCurve implements Polygon {
         height = h;
         assert (side1 <= side2 && side2 <= side3);
         assert (height <= base);
-    }
-
-    public double computeArea() {
-        return (0.5 * base * height);
     }
 
     @Override

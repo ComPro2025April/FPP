@@ -12,6 +12,6 @@ public class Rectangle implements Polygon {
 
     @Override
     public double[] getArrayOfSides() {
-        return new double[0];
+        return new double[]{width, width, length, length};
     }
 }
