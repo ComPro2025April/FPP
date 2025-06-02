@@ -43,7 +43,7 @@ public class Employee {
 		sb.append("ACCOUNT INFO FOR ").append(name).append(":\n\n");
 
 		for(Account a : accounts.getAll()){
-			sb.append("Account type: ").append(a.getAccountType()).append("\n");
+			sb.append("Account type: ").append(a.getAccountTypeString()).append("\n");
 			sb.append("Current bal:  ").append(a.getBalance()).append("\n");
 		}
 		return sb.toString();
@@ -56,7 +56,7 @@ public class Employee {
 
 	public boolean withdraw(int accountIndex, double amt){
 		Account selected = accounts.get(accountIndex);
-		if(selected.getBalance() >= amt){
+		if(selected.getBalanceCheck() >= amt){
 			selected.makeWithdrawal(amt);
 			return true;
 		}

@@ -12,7 +12,7 @@ public class Main {
 		emps[0] = new Employee("Jim Daley", 2000, 9, 4);
 		emps[1] = new Employee("Bob Reuben", 1998, 1, 5);
 		emps[2] = new Employee("Susan Randolph", 1997, 2,13);
-		
+
 		emps[0].createNewChecking(10500);
 		emps[0].createNewSavings(1000);
 		emps[0].createNewRetirement(9300);
@@ -29,7 +29,7 @@ public class Main {
 			String answer3;
 			String answer4;
 			while (true) {
-				System.out.print("A. See a report of all accounts.\n" +
+				System.out.print("\nA. See a report of all accounts.\n" +
 						"B. Make a deposit.\n" +
 						"C. Make a withdrawal.\n" +
 						"Make a selection (A/B/C): ");
@@ -66,7 +66,7 @@ public class Main {
 
 					try {
 						int i = Integer.parseInt(answer3);
-						if (i >= 0 && i < emps.length)
+						if (i >= 0 && i <= 2)
 							break;
 						else
 							System.out.println("!!! Invalid input. Try again !!!");
@@ -93,12 +93,15 @@ public class Main {
 
 				if (answer1.toUpperCase().equals("B")) {
 					emps[Integer.parseInt(answer2)].deposit(Integer.parseInt(answer3),Integer.parseInt(answer4) );
-					System.out.println("$" + answer4 + " has been deposited in the " + emps[0].getAccount(Integer.parseInt(answer3)).getAccountType() + " account of " + emps[Integer.parseInt(answer2)].getName());
+					System.out.println("$" + answer4 + " has been deposited in the " + emps[Integer.parseInt(answer2)].getAccount(Integer.parseInt(answer3)).getAccountTypeString() + " account of " + emps[Integer.parseInt(answer2)].getName());
+					System.out.println("Balance : $" + emps[Integer.parseInt(answer2)].getAccount(Integer.parseInt(answer3)).getBalanceCheck());
 				}
 
 				if (answer1.toUpperCase().equals("C")) {
-					if (emps[Integer.parseInt(answer2)].withdraw(Integer.parseInt(answer3), Integer.parseInt(answer4)))
-						System.out.println("$" + answer4 + " has been withdrawn in the " + emps[0].getAccount(Integer.parseInt(answer3)).getAccountType() + " account of " + emps[Integer.parseInt(answer2)].getName());
+					if (emps[Integer.parseInt(answer2)].withdraw(Integer.parseInt(answer3), Integer.parseInt(answer4))){
+						System.out.println("$" + answer4 + " has been withdrawn in the " + emps[Integer.parseInt(answer2)].getAccount(Integer.parseInt(answer3)).getAccountTypeString() + " account of " + emps[Integer.parseInt(answer2)].getName());
+						System.out.println("Balance : $" + emps[Integer.parseInt(answer2)].getAccount(Integer.parseInt(answer3)).getBalanceCheck());
+					}
 					else
 						System.out.println("!!! Insufficient funds !!!");
 				}
@@ -108,16 +111,23 @@ public class Main {
 				System.out.println(getFormattedAccountInfo());
 			}
 
-			System.out.print("Do you want to exit? (y/n): ");
-			String exit = sc.next();
+			String exit = "";
+			while (true) {
+				System.out.print("Do you want to exit? (y/n): ");
+				exit = sc.next();
+
+				try {
+					if (exit.equalsIgnoreCase("y") || exit.equalsIgnoreCase("n"))
+						break;
+				} catch (Exception e) {
+				}
+			}
 			if(exit.equalsIgnoreCase("y"))
 				break;
 		}
 	}
 
 	String getName(){
-		//loop through employees array and get formatted
-		//account info for each employee, and assemble into a string
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<emps.length; i++){
 			sb.append("\n").append(i+".").append(emps[i].getName());
@@ -126,8 +136,6 @@ public class Main {
 	}
 
 	String getFormattedAccountInfo(){
-		//loop through employees array and get formatted
-		//account info for each employee, and assemble into a string
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<emps.length; i++){
 			sb.append(emps[i].getFormattedAcctInfo()).append("\n");

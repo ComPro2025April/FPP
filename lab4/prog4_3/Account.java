@@ -37,11 +37,19 @@ class Account {
 		return false;
 	}
 
-	public String getAccountType(){
+	public String getAccountTypeString(){
 		return (this.acctType == 0) ? "CHECKING" : (this.acctType == 1) ? "SAVING" : "RETIREMENT" ;
 	}
 
+	public int getAccountType(){
+		return this.acctType;
+	}
+
 	public double getBalance(){
+		return this.balance;
+	}
+
+	public double getBalanceCheck(){
 		return this.balance;
 	}
 }

@@ -10,4 +10,8 @@ class RetirementAccount extends Account{
     public int getAcctType() {
         return Account.RETIREMENT;
     }
+
+    public boolean makeWithdrawal(double amount) {
+        return super.makeWithdrawal(amount+((super.getBalanceCheck()-amount)*0.02));
+    }
 }

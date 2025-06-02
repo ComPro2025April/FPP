@@ -8,4 +8,9 @@ class CheckingAccount extends Account{
     public int getAcctType() {
         return Account.CHECKING;
     }
+
+    public double getBalance(){
+        this.makeWithdrawal(5);
+        return super.getBalanceCheck();
+    }
 }
