@@ -1,3 +1,5 @@
+package lab5.prog5_2;
+
 public class Top {
 	int t = 1;
 	Middle mid;

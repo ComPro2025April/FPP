@@ -1,4 +1,4 @@
-package prog5_3_startup;
+package lab5.prog5_3;
 
 import java.util.Arrays;
 import java.util.Comparator;
