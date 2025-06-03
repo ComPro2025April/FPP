@@ -2,28 +2,28 @@ package lab5.prog5_2;
 
 public class Top {
 	int t = 1;
-	Middle mid;
-	Middle.Bottom midbot;
-	//returns the value in the instance vble of Bottom
+	Middle mid = new Middle();
+	Middle.Bottom midBot = new Middle().new Bottom();
+	//returns the value in the instance variable of Bottom
 	int readBottom() {
 		//implement
-		return 0;
+		return midBot.b;
 	}
 	class Middle {
 		int m = 2;
-		//returns sum of instance vble in Top and 
-		//instance vble in Bottom
+		//returns sum of instance variable in Top and
+		//instance variable in Bottom
 		int addTopAndBottom() {
 			//implement
-			return 0;
+			return Top.this.t + midBot.b;
 		}
 		class Bottom {
 			int b = 3;
-			//returns the product of the instance vbles
+			//returns the product of the instance variables
 			//in all three classes
 			int multiplyAllThree() {
 				//implement
-				return 0;
+				return Top.this.t * mid.m * b;
 			}
 		}
 	}
@@ -32,7 +32,7 @@ public class Top {
 
 		System.out.println(top.readBottom());
 		System.out.println(top.mid.addTopAndBottom());
-		System.out.println(top.midbot.multiplyAllThree());
+		System.out.println(top.midBot.multiplyAllThree());
 
 	}
 
