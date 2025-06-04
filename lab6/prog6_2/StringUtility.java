@@ -16,6 +16,7 @@ public class StringUtility extends JFrame{
     private JPanel panel;
 
     public StringUtility(){
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("String Utility");
         inputText.setPreferredSize(new Dimension(200, 30));
         outputText.setPreferredSize(new Dimension(200, 30));
