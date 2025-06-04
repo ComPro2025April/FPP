@@ -5,9 +5,20 @@ import java.util.Comparator;
 
 public class StringSort {
 	Comparator<String> myComparator;
+	static StringSort instance;
 
-	public StringSort(
-			Comparator<String> myComparator) {
+	private StringSort() {
+
+	}
+
+	public static StringSort getInstance() {
+		if(instance == null) {
+			instance = new StringSort();
+		}
+		return instance;
+	}
+
+	public StringSort(Comparator<String> myComparator) {
 		this.myComparator = myComparator;
 	}
 
