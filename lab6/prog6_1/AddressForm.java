@@ -55,6 +55,7 @@ public class AddressForm extends JFrame {
 
         add(content);
         setVisible(true);
+        setResizable(false);
 
         // Validation with individual messages
         submitButton.addActionListener(e -> {
