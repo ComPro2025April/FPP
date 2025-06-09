@@ -1,4 +1,4 @@
-package Lab2.prog2_7;
+package lab2.prog2_7;
 
 import java.util.Random;
 

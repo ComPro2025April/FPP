@@ -7,6 +7,7 @@ public class Main {
         Account savings = new Account(employee, AccountType.SAVING,300);
         Account retirement = new Account(employee, AccountType.RETIREMENT,300);
 
+        System.out.println(employee);
         System.out.println(checking);
         System.out.println(savings);
         System.out.println(retirement);
