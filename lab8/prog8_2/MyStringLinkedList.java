@@ -172,7 +172,6 @@ public class MyStringLinkedList {
 		Node current = header.next;
 		while (current != null) {
 			Node min = minNode(current);
-			System.out.println("min: " + min.value);
 			swap(current, min);
 			current = current.next;
 		}
