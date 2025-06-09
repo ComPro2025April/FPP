@@ -1,6 +1,7 @@
 package lab8.prog8_3;
 
 import java.util.Comparator;
+import java.util.Date;
 
 public class NameComparator implements Comparator<Employee> {
 
@@ -29,7 +30,4 @@ public class NameComparator implements Comparator<Employee> {
 			return 0;
 		}
 	}	
-}
-
-	
 }
