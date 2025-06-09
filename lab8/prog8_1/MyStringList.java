@@ -1,4 +1,4 @@
-package prog8_1_startup;
+package lab8.prog8_1;
 
 public class MyStringList {
 	private final int INITIAL_LENGTH = 4;
@@ -11,17 +11,37 @@ public class MyStringList {
 	}
 	
 	/******* sorting methods ********/
-	public void minSort(){
-		//implement
+	public void minSort() {
+		if (strArray == null || strArray.length <= 1)
+			return;
+		for (int i = 0; i < size; ++i) {
+			int nextMinPos = minpos(i, size - 1);
+
+			swap(i, nextMinPos);
+		}
 	}
-	void swap(int i, int j){
-		//implement
-		
+
+	int minpos(int i, int j) {
+		int pos = -1;
+		String min = null;
+
+		for (int k = i; k <= j; ++k) {
+			if (strArray[k] == null) continue;
+
+			if (min == null || strArray[k].compareTo(min) < 0) {
+				pos = k;
+				min = strArray[k];
+			}
+		}
+
+		return pos == -1 ? i : pos;
 	}
-	//find minimum of arr between the indices bottom and top
-	public int minpos(int bottom, int top){		
-		//implement
-		return -1;
+
+	void swap(int i, int j) {
+		if (i == j) return;
+		String temp = strArray[i];
+		strArray[i] = strArray[j];
+		strArray[j] = temp;
 	}
 
 	/********* end sorting methods ********/
@@ -30,7 +50,18 @@ public class MyStringList {
 	
 	//search a sorted array
 	boolean binSearchIt(String val) {
-	    //implement
+	    int low = 0, high = size - 1;
+		while (low <= high) {
+			int mid = low + (high - low) / 2;
+			if (strArray[mid].compareTo(val) == 0) {
+				return true;
+			}
+			if (strArray[mid].compareTo(val) < 0) {
+				low = mid + 1;
+			} else {
+				high = mid - 1;
+			}
+		}
 		return false;
 	}
 
@@ -117,7 +148,7 @@ public class MyStringList {
 		}
 		list.minSort();
 		System.out.println("The list in sorted order:");
-		System.out.println(list.toString());
+		System.out.println(list);
 		System.out.println();
 		System.out.println("\"number\" is in the list? "+list.binSearchIt("number"));
 		System.out.println("\"tiny\" is in the list? "+list.binSearchIt("tiny"));

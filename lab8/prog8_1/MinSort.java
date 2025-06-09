@@ -1,4 +1,4 @@
-package prog8_1_startup;
+package lab8.prog8_1;
 
 import java.util.Arrays;
 
