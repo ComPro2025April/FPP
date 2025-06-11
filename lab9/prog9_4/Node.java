@@ -4,7 +4,10 @@ package lab9.prog9_4;
 public class Node {
 	String data;
 	Node next;
-	
+
+	public Node(String data) {
+		this.data = data;
+	}
 	@Override
 	public String toString() {
 	    if(data == null) return "";
@@ -14,7 +17,7 @@ public class Node {
 	}
 	private StringBuilder toString(StringBuilder sb, Node n) {
 		if(n == null) return sb;
-		sb.append(n.data + " ");
+		sb.append(n.data).append(" ");
 		return toString(sb, n.next);
 	}
 }

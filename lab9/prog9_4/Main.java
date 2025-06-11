@@ -29,8 +29,5 @@ public class Main {
 				System.out.println("Unexpected QueueException while dequeueing");
 			}
 			System.out.println("Is the queue empty? " + theQueue.isEmpty());
-		
-
 	}
-
 }
