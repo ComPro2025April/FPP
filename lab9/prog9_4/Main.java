@@ -19,6 +19,11 @@ public class Main {
 			theQueue.enqueue("3");
 			theQueue.enqueue("4");
 			theQueue.enqueue("5");
+			theQueue.enqueue("6");
+			theQueue.enqueue("7");
+			theQueue.enqueue("8");
+			theQueue.enqueue("9");
+			theQueue.enqueue("10");
 			System.out.println(theQueue);
 			
 			try {
