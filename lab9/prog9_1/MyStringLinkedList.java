@@ -2,9 +2,11 @@ package lab9.prog9_1;
 
 public class MyStringLinkedList {
 	Node header;
+
 	MyStringLinkedList(){
 		header = new Node(null,null, null);
 	}
+
 	public Node add(String item){
 		Node n = new Node(header.next,header,item);
 		if(header.next != null){
@@ -13,6 +15,7 @@ public class MyStringLinkedList {
 		header.next = n;
 		return n;
 	}
+
 	private Node getNode(int pos){
 		if (pos >= size()) throw new IndexOutOfBoundsException();		
 		Node next = header;
@@ -178,6 +181,7 @@ public class MyStringLinkedList {
 			this.previous = previous;
 			this.value = value;
 		}
+
 		@Override
 		public String toString() {
 		    if(value == null) return "";
@@ -185,6 +189,7 @@ public class MyStringLinkedList {
 			sb = toString(sb, next);
 			return sb.toString();
 		}
+
 		private StringBuilder toString(StringBuilder sb, Node n) {
 			if(n == null) return sb;
 			sb.append(n.value + " ");

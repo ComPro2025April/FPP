@@ -7,15 +7,37 @@ public class MyStack {
 	}
 	
 	public String pop() {
-		//implement
+		if(list.size() > 0) {
+			String s = list.get(0);
+			list.remove(0);
+			return s;
+		}
 		return null;
 	}
+
 	public String peek() {
-		//implement
+		if(list.size() > 0) {
+			return list.get(0);
+		}
 		return null;
 	}
 	
 	public void push(String s) {
-		//implement
+		list.add(s);
+	}
+
+	public static void main(String[] args){
+		MyStack stack = new MyStack();
+		stack.push("Bob");
+		stack.push("Harry");
+		stack.push("Alice");
+		System.out.println("Popping…"+stack.pop());
+		System.out.println("Peeking…."+stack.peek());
+		System.out.println("Popping…"+stack.pop());
+		System.out.println("Peeking…."+stack.peek());
+		System.out.println("Popping…"+stack.pop());
+		System.out.println("Popping…"+stack.pop());
+		System.out.println("Popping…"+stack.pop());
+		System.out.println("Popping…"+stack.pop());
 	}
 }
