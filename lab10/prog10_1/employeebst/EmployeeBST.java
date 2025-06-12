@@ -26,13 +26,13 @@ public class EmployeeBST extends NameComparator {
             System.out.println("Empty tree");
         else{
 
-            System.out.println("printPreTree tree");
+            System.out.println("\nPrint Pre-order Tree");
             printPreTree(root);
 
-            System.out.println("printTree tree");
+            System.out.println("\nPrint In-Order Tree");
             printTree(root);
 
-            System.out.println("printPostTree tree");
+            System.out.println("\nPrint Post-Order Tree");
             printPostTree(root);
 
         }
