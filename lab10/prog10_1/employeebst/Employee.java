@@ -3,7 +3,7 @@ package lab10.prog10_1.employeebst;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Employee {
+public class Employee{
 
 	private String name;
 	private Date hireDate;
@@ -20,12 +20,15 @@ public class Employee {
 	public Date getHireDate() {
 		return (Date)hireDate.clone();
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public double getSalary() {
 		return salary;
 	}
+
 	public boolean equals(Object o){
 		final double SAL_TOLERANCE = 0.00000001;
 		if(o==null) return false;
@@ -43,14 +46,12 @@ public class Employee {
 				5*((int)Math.round(salary)) +
 				5 * 5 * hireDate.hashCode();
 	}
+
 	public String toString() {
 		String newline = System.getProperty("line.separator");
-		return newline+"EMPLOYEE "+name+newline+
-				"Date of Hire: "+hireDate+newline+
-				"Salary: "+salary+newline;
+		return "EMPLOYEE "+name+
+				" Date of Hire: "+hireDate+
+				" Salary: "+salary;
 	}
-
-	
-
 }
 
