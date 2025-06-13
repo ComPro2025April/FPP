@@ -43,11 +43,34 @@ public class MyHashtable implements Iterable {
 		}
 		return false;
 	}
+
+	private void rehash(){
+		tableSize = tableSize + INITIAL_SIZE;
+		LinkedList[] temp = new LinkedList[tableSize];
+
+		for(LinkedList l : table){
+			if(l != null) {
+				for(Object e : l){
+					int hashcode = ((Entry)e).key.hashCode();
+					int hash = hash(hashcode);
+					if(temp[hash] == null)
+						temp[hash] = new LinkedList();
+					temp[hash].add(e);
+				}
+			}
+		}
+		table = temp;
+	}
 	
 	public void put(Object key, Object value){
 		if(key==null) return;
 		int hashcode = key.hashCode();
 		int hash = hash(hashcode);
+
+		if(numEntries * DEFAULT_LOAD_FACTOR > tableSize){
+			rehash();
+		}
+
 		//if key has already been used, update value in the Entry
 		Entry e = getEntry(key);
 		if (e != null) {
@@ -215,6 +238,4 @@ public class MyHashtable implements Iterable {
 		}
 		System.out.println(h);	
 	}
-
-
 }
