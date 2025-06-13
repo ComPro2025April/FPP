@@ -1,7 +1,7 @@
 package lab11.prog11_1;
 
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Map;
 
 public class Employee {
 	private String firstName;
@@ -9,14 +9,33 @@ public class Employee {
 	private HashMap salaryRecord;
 	
 	public void addEntry(String date, double salary) {
-		//implement
+		if(salaryRecord == null)
+			salaryRecord = new HashMap();
+		salaryRecord.put(date, salary);
 	}
+
 	public void printPaymentAmount(String date) {
-		//implement
-		
+		String format = "%s %s was paid %.1f on %s";
+		String formatNot = "%s %s did not receive a paycheck on %s";
+
+		if(salaryRecord.get(date) != null)
+			System.out.println(String.format(format, getFirstName(), getLastName() , salaryRecord.get(date) ,date));
+		else
+			System.out.println(String.format(formatNot, getFirstName(), getLastName() , date ));
 	}
+
 	public void printAveragePaycheck() {
 		//implement
+		String format = "Average paycheck for %s %s was %.1f";
+		double avg=0;
+		int count=0;
+
+		for(Object it : salaryRecord.entrySet()) {
+			avg += (double)((Map.Entry)it).getValue();
+			count++;
+		}
+
+		System.out.println(String.format(format, getFirstName(), getLastName() , avg/count ));
 	}
 	
 	public static void main(String[] args) {
