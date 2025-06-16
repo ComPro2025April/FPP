@@ -27,10 +27,10 @@ public class Main {
 			System.out.println(theQueue);
 			
 			try {
-				for(int i = 0; i < 5; ++i) {
+				for(int i = 0; i < 15; ++i) {
 					System.out.println("Removed " + theQueue.dequeue());
 				}
-			} catch(QueueException e) {
+			} catch(Exception e) {
 				System.out.println("Unexpected QueueException while dequeueing");
 			}
 			System.out.println("Is the queue empty? " + theQueue.isEmpty());

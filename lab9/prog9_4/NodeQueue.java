@@ -23,8 +23,8 @@ public class NodeQueue {
 	 * Removes node from the front of the queue and returns its value if
 	 * head is n
 	 */
-	public String dequeue() throws QueueException {
-		if(isEmpty()) throw new QueueException("Queue is empty!");
+	public String dequeue() throws Exception {
+		if(isEmpty()) throw new Exception("Queue is empty!");
 		String s = head.data;
 		head = head.next;
 		return s;
