@@ -1,6 +1,7 @@
 package lab12.prog12_2.employeeinfo;
 
 import lab12.prog12_2.MyStringList;
+import lab12.prog12_2.OverdrawnAccountException;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -43,9 +44,9 @@ public class Employee {
 		Account selected = accounts.get(acctIndex);
 		selected.makeDeposit(amt);
 	}
-	public boolean withdraw(int acctIndex, double amt){
+	public void withdraw(int acctIndex, double amt) throws OverdrawnAccountException {
 		Account selected = accounts.get(acctIndex);
-		return selected.makeWithdrawal(amt);
+		selected.makeWithdrawal(amt);
 	}	
 	
 
