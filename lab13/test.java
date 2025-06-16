@@ -7,11 +7,11 @@ import java.sql.SQLException;
 
 public class test {
     public static void main(String[] args){
-        String url = "jdbc:postgresql://localhost:5432/FPP";
+        String url = "jdbc:postgresql://localhost:5432/FPPDB";
         String uname = "postgres"; // Username - Common
-        String pass = "postgres"; // Password you created
+        String pass = "test"; // Password you created
 
-        String query = "select * from person";
+        String query = "select * from students";
 
         try (Connection con = DriverManager.getConnection(url,uname,pass);) {
 
@@ -19,8 +19,6 @@ public class test {
             PreparedStatement ps = con.prepareStatement(query);
 
             System.out.println( ps.executeQuery());
-
-
         }
         catch (SQLException e) {
                 throw new RuntimeException(e);

@@ -10,10 +10,9 @@ import junit.framework.TestCase;
 
 public class Test extends TestCase {
 	static File insert;
-	private String expectedText = "This is the file you are seeking!";
-	private String setupDirectory = "C:\\testCode";
-	private String targetFile = "seek.txt";
-	@Override
+	private final String expectedText = "This is the file you are seeking!";
+
+    @Override
 	public void setUp() {
 		File f = new File("C:\\testCode\\level1\\level2\\finalLevel");
 		System.out.println(f.mkdirs());
@@ -36,12 +35,11 @@ public class Test extends TestCase {
 	}
 	
 	public void testSearchForFile() {
-		
-		boolean result = FileSearch.searchForFile(targetFile, setupDirectory);
+
+        String setupDirectory = "C:\\testCode";
+        String targetFile = "seek.txt";
+        boolean result = FileSearch.searchForFile(targetFile, setupDirectory);
 		assertTrue(result);
-		assertTrue(expectedText.equals(FileSearch.discoveredText.trim()));
-		
-		
-		
+        assertEquals(expectedText, FileSearch.discoveredText.trim());
 	}
 }

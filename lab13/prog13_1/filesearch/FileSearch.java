@@ -23,7 +23,7 @@ boolean searchForFile(Object file, Object startDir) {
 	//file not found in startDir
 	return false;
 }
-*/
+
 public class FileSearch {
 	static boolean found = false;
 	//Store the text that is found in the
@@ -33,7 +33,56 @@ public class FileSearch {
 		//implement
 		return false;	
 	}
-	
-	
+}
+*/
 
+
+public class FileSearch {
+	static boolean found = false;
+
+	// Stores the text found in the discovered file
+	static String discoveredText = null;
+
+	public static boolean searchForFile(String filename, String startDir) {
+		File directory = new File(startDir);
+		if (!directory.exists() || !directory.isDirectory()) {
+			return false;
+		}
+		found = false; // reset before starting
+		discoveredText = null;
+		search(directory, filename);
+		return found;
+	}
+
+	private static void search(File dir, String filename) {
+		if (found) return; // stop searching once found
+
+		File[] files = dir.listFiles();
+		if (files == null) return;
+
+		for (File file : files) {
+			if (file.isFile() && file.getName().equals(filename)) {
+				found = true;
+				discoveredText = readFile(file);
+				System.out.println("File found: " + file.getAbsolutePath());
+				System.out.println("Contents:\n" + discoveredText);
+				return;
+			} else if (file.isDirectory()) {
+				search(file, filename);
+			}
+		}
+	}
+
+	private static String readFile(File file) {
+		StringBuilder content = new StringBuilder();
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				content.append(line).append("\n");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return content.toString();
+	}
 }
