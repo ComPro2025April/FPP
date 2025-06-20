@@ -43,11 +43,10 @@ public class Employee {
 		Account selected = accounts.get(acctIndex);
 		selected.makeDeposit(amt);
 	}
-	public boolean withdraw(int acctIndex, double amt){
+	public void withdraw(int acctIndex, double amt) throws OverdrawnAccountException {
 		Account selected = accounts.get(acctIndex);
-		return selected.makeWithdrawal(amt);
-	}	
-	
+		selected.makeWithdrawal(amt);
+	}
 
 	public String getName() {
 		return name;

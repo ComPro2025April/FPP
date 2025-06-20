@@ -1,6 +1,7 @@
 package lab12.prog12_2;
 
 import lab12.prog12_2.employeeinfo.Employee;
+import lab12.prog12_2.employeeinfo.OverdrawnAccountException;
 
 import java.util.Scanner;
 
@@ -113,18 +114,16 @@ public class Main {
 		
 		double amount = sc.nextDouble();
 		System.out.println();
-		boolean ok=e.withdraw(accountIndex, amount);
-		System.out.println();
-		if(ok){
+		try {
+			e.withdraw(accountIndex, amount);
 			System.out.println("$"+amount+
-				" has been withdrawn from the "+n+name+" account of "+ emps[empChoice].getName());
-		}
-		else {
+					" has been withdrawn from the "+n+name+" account of "+ emps[empChoice].getName());
+		} catch (OverdrawnAccountException err) {
+			System.out.println(err.getMessage());
 			System.out.println("Amount $"+amount+" exceeds the current balance of the "+n+name+
 					" account of "+emps[empChoice].getName());
 		}
-		
-		
+		System.out.println();
 	}	
 	
 
