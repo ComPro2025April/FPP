@@ -1,5 +1,7 @@
 package lab12.prog12_2.employeeinfo;
 
+import lab12.prog12_2.OverdrawnAccountException;
+
 public class RetirementAccount extends Account {
 	private final double PENALTY_PERCENT = 2.0;
 
